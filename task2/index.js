@@ -47,16 +47,15 @@ app.get("/api/auth/refresh-token", refreshToken);
 app.post("/api/auth/register", register);
 app.post("/api/auth/reset-password", resetPassword);
 
-// 	Нелогирани корисници можат да ги прегледуваат сите курсеви или еден конкретен курс
+
 app.get("/api/courses", getAllCourses);
 app.get("/api/course/:id", getOneCourse);
 
-// Само логиран корисник може да додава, брише или менаџира курс
+
 app.post("/api/course", createCourse);
 app.put("/api/course/:id", updateCourse);
 app.delete("/api/course/:id", removeCourse);
 
-// 	Курсот е дел од една академија, во која има повеќе курсеви
 app.get("/api/academy/:id/courses", getCoursesByAcademy);
 
 app.get("/api/academy", getAllAcademies);
